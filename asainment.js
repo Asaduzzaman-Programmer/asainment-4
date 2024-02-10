@@ -31,3 +31,21 @@ function checkName(name){
 }
 
 
+
+function deleteInvalids(array){
+    if (!Array.isArray(array)){
+        return 'Invalid Array';
+    }
+    else{
+        let newArray = [];
+        for (const value of array){
+            if (typeof value === 'number' && !isNaN(value)){
+                newArray.push(value)
+            }
+        }
+        return newArray;
+    }
+   
+}
+
+
