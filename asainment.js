@@ -49,3 +49,23 @@ function deleteInvalids(array){
 }
 
 
+
+
+function password(obj){
+    const name = obj.name;
+    const birthYear = obj.birthYear;
+    const siteName = obj.siteName;
+    if(birthYear.toString().length < 4 || name === undefined || birthYear === undefined || siteName === undefined){
+          return 'invalid';
+    }
+    else{
+          const capitalSiteName = siteName[0].toUpperCase() + siteName.slice(1);
+          const fullinfo = `${capitalSiteName}#${name}@${birthYear}`;
+          return fullinfo;
+          
+    }
+}
+
+
+
+
