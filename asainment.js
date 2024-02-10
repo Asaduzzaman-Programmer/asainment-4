@@ -69,3 +69,28 @@ function password(obj){
 
 
 
+function monthlySavings(arr, livingCost){
+    if(!Array.isArray(arr) || typeof livingCost !== 'number'){
+          return 'invalid input';
+    }
+    else{
+          let sum = 0;
+          for (const value of arr){
+                let taxAmount = 0;
+        if(value >= 3000){
+                      let taxPercentage = 20;
+              taxAmount = (taxPercentage / 100) * value;
+                        }
+                sum+=value-taxAmount;
+          }
+ const savings = sum.toFixed(0) - livingCost;
+          if(sum === livingCost){
+                return 0;
+}
+          else if(savings > 0){
+                return savings;
+
+     }
+          return 'earn more';
+    }
+}
